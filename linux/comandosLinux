@@ -1,0 +1,65 @@
+UTILITARIOS:
+
+ctr+c e ctrl+v no terminal = shift+ctrl+c/v
+
+sudo: permição de adm
+
+------------------------------------------------------------------
+
+COMANDOS BÁSICOS LINUX:
+
+-> whoami - mostra o usuario atualmente conectado
+
+-> sudo su - modo admin
+
+-> clear/ctrl+L - limpa terminal
+
+-> ls - lista todos os itens dentro do diretorio do terminal
+* ls-a - lista todos os itens ocultos
+
+-> cd - navega entre os diretorios
+* cd~ - retorna ao diretorio padrão
+* cd .. - "sobe" um diretorio
+
+-> mkdir "pasta exemplo" - cria um diretorio
+* rmdir "pasta exemplo" - apaga um diretorio (apenas se estiver vazio)
+
+-> cd "nome do diretorio" - entra dentro do diretorio
+
+-> pwd - mostra o caminho do seu diretorio atual
+
+-> touch exemplo.txt - cria arquivos no formato desejado
+
+-> cat exemplo.txt - mostra o que existe dentro do arquivo desejado
+
+-> rm -r "pasta exemplo" - apaga um diretorio (cheio)
+
+----------------------------------------------------------------
+
+COMANDOS DE APLICATIVOS:
+
+-> sudo apt update - atualiza o sistema
+
+-> apt --help - mostra comandos mais utilizados
+
+-> apt list - mostra aplicativos instalados
+
+-> apt search "nome do pacote" - pesquisa pacotes instalados
+
+-> sudo apt install "nome do pacote" - instala um programa
+
+-> sudo apt remove "nome do pacote" - remove um programa
+
+-> sudo apt upgrade - instala pacotes sugeridos e atualiza os existentes
+* sudo apt full-upgrade - remove e instala novos pacotes e atualiza exsitentes
+* sudo apt show "nome do pacote" - mostra todas as informações do pacote instalado
+
+-> apt-cache depends "nome do programa" - mostra todas as dependencias do programa
+
+--------------------------------------------------------------
+
+INSTALANDO PROGRAMAS .deb:
+
+-> sudo dpkg -i "nomeDoArquivo.deb" -> instala o programa utilizando o instalador
+
+
