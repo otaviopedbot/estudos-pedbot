@@ -1,0 +1,8 @@
+    FROM phpmyadmin/phpmyadmin
+
+    ENV PMA_ARBITRARY=1
+    ENV PMA_HOST=mysql-container
+    ENV PMA_USER=usuario_mysql
+    ENV PMA_PASSWORD=senha_mysql
+
+    EXPOSE 80

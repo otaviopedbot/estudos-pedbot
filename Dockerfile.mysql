@@ -1,0 +1,6 @@
+FROM mysql:5.7
+    
+ENV MYSQL_ROOT_PASSWORD=senha_root
+ENV MYSQL_DATABASE=database
+ENV MYSQL_USER=usuario_mysql
+ENV MYSQL_PASSWORD=senha_mysql

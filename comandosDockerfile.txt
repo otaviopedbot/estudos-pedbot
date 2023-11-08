@@ -1,0 +1,11 @@
+comandos para construir as imagens:
+
+docker build -t mysql-image -f Dockerfile.mysql .
+
+docker build -t phpmyadmin-image -f Dockerfile.phpmyadmin .
+
+comandos para subir os containers:
+
+docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=senha_root -e MYSQL_DATABASE=database -e MYSQL_USER=usuario_mysql -e MYSQL_PASSWORD=senha_mysql -p 3306:3306 mysql-image
+
+docker run -d --name phpmyadmin-container -p 8080:80 phpmyadmin-image
