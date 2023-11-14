@@ -15,7 +15,6 @@ primary key(id)
 
 create table bookshelves(
 id int not null auto_increment,	
-book_id int,
 name varchar(45) not null,
 primary key(id)
 );
