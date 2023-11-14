@@ -1,0 +1,98 @@
+# criando o banco:
+
+create database stock;
+use stock;
+
+# criando a tabela assignments:
+
+create table assignments(
+id int not null auto_increment,
+name varchar(45),
+primary key(id)
+);
+
+# criando a tabela shelves:
+
+create table shelves(
+id int not null auto_increment,
+name varchar(45),
+assignment_id int,
+foreign key (assignment_id) references assignments(id),
+primary key(id)
+);
+
+# criando a tabela products:
+
+create table products(
+id int not null auto_increment,
+name varchar(45),
+price float,
+type varchar(45),
+weight float,
+shelve_id int,
+shelve_assignment_id int,
+foreign key (shelve_id) references shelves(id),
+foreign key (shelve_assignment_id) references assignments(id),
+primary key(id)
+);
+
+# criando a tabela sales:
+
+create table sales(
+id int not null auto_increment,
+date date,
+primary key(id)
+);
+
+# criando a tabela product_sales:
+
+create table product_sales(
+id int not null auto_increment,
+product_id int,
+sale_id int,
+foreign key (product_id) references products(id),
+foreign key (sale_id) references sales(id),
+primary key(id)
+);
+
+# criando a tabela brands:
+
+create table brands(
+id int not null auto_increment,
+name varchar(45),
+phone varchar(45),
+primary key(id)
+);
+
+# criando a tabela product_brands:
+
+create table product_brands(
+id int not null auto_increment,
+product_id int,
+brand_id int,
+foreign key (product_id) references products(id),
+foreign key (brand_id) references brands(id),
+primary key(id)
+);
+
+# criando a tabela supliers:
+
+create table supliers(
+id int not null auto_increment,
+name varchar(45),
+phone varchar(45),
+primary key(id)
+);
+
+# criando a tabela buys:
+
+create table buys(
+id int not null auto_increment,
+date date,
+price float,
+suplier_id int,
+product_id int,
+foreign key (suplier_id) references supliers(id),
+foreign key (product_id) references products(id),
+primary key(id)
+);

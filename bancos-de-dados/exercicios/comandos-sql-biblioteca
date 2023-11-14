@@ -1,0 +1,77 @@
+# criando o banco:
+
+create database library;
+use library;
+
+# criando a tabela authors:
+
+create table authors(
+id int not null auto_increment,
+name varchar(45) not null,
+primary key(id)
+);
+
+# criando a tabela bookshelves:
+
+create table bookshelves(
+id int not null auto_increment,	
+book_id int,
+name varchar(45) not null,
+primary key(id)
+);
+
+# criando a tabela books:
+
+create table books(
+id int not null auto_increment,	
+title varchar(45) not null,
+page int,
+quantity int,
+author_id int,
+bookshelve_id int,
+foreign key (author_id) references authors(id),
+foreign key (bookshelve_id) references bookshelves(id),
+primary key(id)
+);
+
+# criando a tabela publishers:
+
+create table publishers(
+id int not null auto_increment,
+name varchar(45),
+phone varchar(45),
+primary key(id)
+);
+
+# criando a tabela book_publishers:
+
+create table book_publishers(
+id int not null auto_increment,
+publisher_id int ,
+book_id int,
+foreign key (book_id) references books(id),
+foreign key (publisher_id) references publishers(id),
+primary key(id)
+);
+
+# crianado a tabela customers:
+
+create table customers(
+id int not null auto_increment,
+name varchar(45),
+phone varchar(45),
+adress varchar(45),
+primary key(id)
+);
+
+# criando a tabela rents:
+
+create table rents(
+id int not null auto_increment,
+date date,
+customer_id int,
+book_id int,
+foreign key (book_id) references books(id),
+foreign key (customer_id) references customers(id),
+primary key(id)
+);
