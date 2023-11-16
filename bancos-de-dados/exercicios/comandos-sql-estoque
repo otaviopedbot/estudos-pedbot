@@ -89,10 +89,43 @@ primary key(id)
 create table buys(
 id int not null auto_increment,
 date date,
-price float,
+value float,
 suplier_id int,
 product_id int,
 foreign key (suplier_id) references supliers(id),
 foreign key (product_id) references products(id),
 primary key(id)
 );
+
+
+# mudanças:
+
+
+use stock;
+
+create table employees (
+    id int not null auto_increment,
+    name varchar(45),
+    phone varchar(45),
+    primary key(id)
+);
+
+use stock;
+
+create table customers (
+    id int not null auto_increment,
+    name varchar(45),
+    phone varchar(45),
+    primary key(id)
+);
+
+use stock;
+
+alter table product_sales
+add column employee_id int,
+add column customer_id int;
+
+use stock;
+
+alter table sales
+add column value float;
