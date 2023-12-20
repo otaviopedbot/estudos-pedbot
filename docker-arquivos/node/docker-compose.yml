@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  nodejs-app:
+    image: node:12.18.3
+    container_name: my-nodejs-app
+    working_dir: /home/otavio/Área de Trabalho/YelpCamp-CRUD
+    volumes:
+      - ./app:/usr/src/app
+    ports:
+      - "3000:3000"
+    command: npm start
+
+
